@@ -1,62 +1,27 @@
 import React, { Component } from 'react';
 import debounce from 'debounce';
 
-import { SearchBar } from './search-bar';
-import { Sidebar } from './sidebar';
-import { Letters } from './letters';
+import { SearchBar } from '../search-bar/search-bar';
+import { Sidebar } from '../sidebar/sidebar';
+import { Letters } from '../letters/letters';
 
-import '../common.blocks/mail__layout-letters.css';
-import '../common.blocks/mail__layout-search.css';
-import '../common.blocks/mail__layout-sidebar.css';
+import { initialLetters, generateLetter } from './app';
 
-const senders = ['Полиция мемов', 'Яндекс.Такси', 'ГоСуслуги'];
-const themes = ['Запощен недопустимый мем', 'До Краснодара за 55000P', 'Ваша справка готова'];
-const dates = ['31 тра', '29 сич', '15 лис'];
+import './mail__layout-letters.css';
+import './mail__layout-search.css';
+import './mail__layout-sidebar.css';
 
 export class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      letters: [
-        {
-          id: 0,
-          data: {
-            checked: false,
-            sender: 'Яндекс.Паспорт',
-            letter: 'Я',
-            date: '6 авг',
-            preview: 'Доступ к аккаунту восстановлен'
-          },
-          special: true,
-          unread: true
-        },
-        {
-          id: 1,
-          data: {
-            checked: false,
-            letter: 'Я',
-            sender: 'Команда Яндекс.Почты',
-            date: '6 июл',
-            preview: 'Как читать почту с мобильного'
-          },
-          unread: true
-        },
-        {
-          id: 2,
-          data: {
-            checked: false,
-            letter: 'Я',
-            sender: 'Яндекс',
-            date: '5 июл',
-            preview: 'Соберите всю почту в этот ящик'
-          },
-          unread: false
-        }
-      ],
+      letters: initialLetters,
       maxId: 20
     };
+  }
 
+  componentDidMount() {
     const addNewLetterDebounced = debounce(this.addLetter, 5 * 60 * 1000);
 
     function addNewLetterRepeated() {
@@ -76,21 +41,7 @@ export class App extends Component {
   };
 
   addLetter = () => {
-    const senderx = senders[Math.floor(Math.random() * senders.length)];
-    const theme = themes[Math.floor(Math.random() * themes.length)];
-    const datex = dates[Math.floor(Math.random() * dates.length)];
-    const newLetter = {
-      id: this.state.maxId + 1,
-      data: {
-        checked: false,
-        letter: senderx[0],
-        sender: senderx,
-        date: datex,
-        preview: theme
-      },
-      unread: Math.random() < 0.5,
-      added: true
-    };
+    const newLetter = generateLetter(this.state.maxId + 1);
     this.setState(prevState => {
       return {
         maxId: prevState.maxId + 1

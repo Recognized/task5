@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { App } from './app/app';
-import './common.blocks/mail.css';
-import './common.blocks/mail-body.css';
+import { App } from './components/app/app.jsx';
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+import './index.css';
+
+ReactDOM.render(<App />, document.getElementById('root'));

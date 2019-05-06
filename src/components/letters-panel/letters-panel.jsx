@@ -1,10 +1,10 @@
 import React from 'react';
-import { Checkbox } from '../components/checkbox/checkbox';
-import '../components/letters/letters__panel.css';
-import '../components/letters/letters__panel-item.css';
-import '../components/letters/letters__panel-button.css';
-import '../common.blocks/mail-link.css';
-import '../common.blocks/single-line.css';
+
+import { Checkbox } from '../checkbox/checkbox';
+
+import './letters__panel.css';
+import './letters__panel-item.css';
+import './letters__panel-button.css';
 
 export const LettersPanel = ({ checkAll, isAllSelected, deleteSelected }) => {
   return (
@@ -22,7 +22,7 @@ const LettersPanelItem = ({ name, action }) => {
   return (
     <div className="letters__panel-item">
       <p>
-        <a className="mail-link single-line letters__panel-button" href="#" onClick={action}>
+        <a className="letters__panel-button" href="#" onClick={action}>
           {name}
         </a>
       </p>

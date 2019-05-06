@@ -1,5 +1,16 @@
+.letters__panel-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: unset;
+  font-style: unset;
+  text-decoration: unset;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
 .letters__panel-button:hover {
-    color: #343434;
-    font-style: unset;
-    text-decoration: unset;
+  color: #343434;
+  font-style: unset;
+  text-decoration: unset;
 }

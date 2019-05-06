@@ -1,7 +1,8 @@
 .search-bar {
-    display: block;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-    width: 400px;
+  position: relative;
+
+  display: block;
+  width: 400px;
+  height: 100%;
+  margin: 0 auto;
 }

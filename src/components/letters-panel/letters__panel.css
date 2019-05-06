@@ -1,6 +1,7 @@
 .letters__panel {
-    border-bottom: solid 1px #e2e2e2;
-    height: 48px;
-    justify-content: start;
-    overflow: hidden;
+  overflow: hidden;
+  height: 48px;
+  justify-content: start;
+
+  border-bottom: solid 1px #e2e2e2;
 }

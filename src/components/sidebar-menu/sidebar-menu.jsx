@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../common.blocks/sidebar__menu-list.css';
+import './sidebar__menu-list.css';
 
 export class SidebarMenu extends Component {
   render() {

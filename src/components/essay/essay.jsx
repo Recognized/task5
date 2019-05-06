@@ -1,16 +1,15 @@
 import React from 'react';
-import '../common.blocks/essay__body.css';
-import '../common.blocks/essay__nuclear-explosion.css';
-import '../common.blocks/centered-item.css';
-import '../common.blocks/essay__paragraph-container.css';
-import '../common.blocks/essay__paragraph.css';
-import '../common.blocks/essay__img-rounded.css';
-import '../common.blocks/essay__button.css';
-import '../common.blocks/gray-text.css';
-import '../common.blocks/essay-close__control-label.css';
-import '../common.blocks/essay-close.css';
-import '../common.blocks/clickable.css';
-import '../common.blocks/letters__control-checkbox.css';
+
+import './essay__body.css';
+import './essay__nuclear-explosion.css';
+import './essay__paragraph-container.css';
+import './essay__paragraph.css';
+import './essay__img-rounded.css';
+import './essay__button.css';
+import './essay-close__control-label.css';
+import './essay-close.css';
+
+import round from './images/round.png';
 
 export const Essay = () => {
   const onClick = () => {
@@ -21,9 +20,9 @@ export const Essay = () => {
   return (
     <div className="letter-inline-first-task">
       <div className="essay__body">
-        <div className="essay__nuclear-explosion" id="explosion"/>
+        <div className="essay__nuclear-explosion" id="explosion" />
         <div className="all" id="all">
-          <div className="centered-item essay__paragraph-container">
+          <div className="essay__paragraph-container">
             <p className="essay__paragraph">
               <u>По поводу курса</u>, ожидаю разбор классических проблем фронтенд разработки{' '}
               <sub>(понятия не имею, что это значит)</sub>. Хочу узнать, почему веб теперь такой,
@@ -35,11 +34,7 @@ export const Essay = () => {
                 <rt> Эм-ви-ви-эм</rt>
               </ruby>
               ), типо как
-              <img
-                alt="Round button"
-                className="essay__img-rounded"
-                src="https://openclipart.org/image/2400px/svg_to_png/23674/Anonymous-red-round-button.png"
-              />
+              <img alt="Round button" className="essay__img-rounded" src={round} />
               написать сайт так, чтобы он работал при потере соединения с сервером (считая, что у
               нас интерактивное веб-приложение). Или как сделать, чтобы каждый элемент твоего
               приложения реагировал
@@ -48,16 +43,13 @@ export const Essay = () => {
               его будущее, (но я про него знаю, просто людям показать, много кто на котлине пишет).
             </p>
           </div>
-          <div className="centered-item essay__button">
-            <button
-              onClick={onClick}
-              type="button"
-            >
+          <div className="essay__button">
+            <button onClick={onClick} type="button">
               hit to copystrike
             </button>
           </div>
-          <button className="essay-close gray-text" type="button">
-            <label className="essay-close__control-label clickable" htmlFor="open-task-1">
+          <button className="essay-close" type="button">
+            <label className="essay-close__control-label" htmlFor="open-task-1">
               X
             </label>
           </button>

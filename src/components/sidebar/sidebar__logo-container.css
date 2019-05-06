@@ -1,5 +1,6 @@
 .sidebar__logo-container {
-    overflow: visible;
-    height: 60px;
-    position: relative;
+  position: relative;
+
+  overflow: visible;
+  height: 60px;
 }

@@ -1,10 +1,12 @@
 import React, { PureComponent } from 'react';
-import '../common.blocks/sidebar__hamburger.css';
-import '../common.blocks/sidebar__logo.css';
-import '../common.blocks/sidebar__img-mail.css';
-import '../common.blocks/sidebar__img-yandex.css';
-import mail from '../sidebar__img-mail.svg';
-import yandex from '../sidebar__img-yandex.svg';
+
+import './sidebar__hamburger.css';
+import './sidebar__logo.css';
+import './sidebar__img-mail.css';
+import './sidebar__img-yandex.css';
+
+import mail from './images/sidebar__img-mail.svg';
+import yandex from './images/sidebar__img-yandex.svg';
 
 export class SidebarLogo extends PureComponent {
   render() {
@@ -23,16 +25,8 @@ export class SidebarLogo extends PureComponent {
           />
         </svg>
         <div className="sidebar__logo">
-          <img
-            alt="yandex"
-            className="sidebar__img-yandex"
-            src={yandex}
-          />
-          <img
-            alt="mail"
-            className="sidebar__img-mail"
-            src={mail}
-          />
+          <img alt="yandex" className="sidebar__img-yandex" src={yandex} />
+          <img alt="mail" className="sidebar__img-mail" src={mail} />
         </div>
       </div>
     );

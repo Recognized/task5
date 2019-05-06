@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../common.blocks/sidebar__menu-item_active.css';
-import '../common.blocks/sidebar__menu-item.css';
-import '../common.blocks/mail-link.css';
+
+import './sidebar__menu-item_active.css';
+import './sidebar__menu-item.css';
 
 export class SidebarMenuItem extends Component {
   render() {

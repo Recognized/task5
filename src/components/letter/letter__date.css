@@ -1,5 +1,6 @@
 .letter__date {
-    float: right;
-    padding: 0 10px;
-    width: 48px;
+  width: 48px;
+  padding: 0 10px;
+  color: #9b9b9b;
+  float: right;
 }

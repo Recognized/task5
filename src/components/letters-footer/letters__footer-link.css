@@ -1,5 +1,15 @@
+.letters__footer-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: unset;
+  font-style: unset;
+  text-decoration: unset;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
 .letters__footer-link:hover {
-    font-style: unset;
-    color: #343434;
-    text-decoration: unset;
+  color: #343434;
+  font-style: unset;
 }

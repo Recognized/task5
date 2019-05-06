@@ -1,6 +1,8 @@
 .letter__preview {
-    float: left;
-    overflow: hidden;
-    padding: 0 10px;
-    width: calc(100% - 418px);
+  overflow: hidden;
+  width: calc(100% - 418px);
+  padding: 0 10px;
+  float: left;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }

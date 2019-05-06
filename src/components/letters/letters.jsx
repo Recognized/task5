@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Letter } from '../components/letter/letter';
-import { LettersPanel } from './letters-panel';
-import { LettersFooter } from './letters-footer';
-import '../common.blocks/letters.css';
-import '../common.blocks/letters__control-checkbox.css';
-import { Essay } from '../components/essay/essay';
+
+import { Essay } from '../essay/essay';
+import { Letter } from '../letter/letter';
+import { LettersPanel } from '../letters-panel/letters-panel';
+import { LettersFooter } from '../letters-footer/letters-footer';
+
+import './letters.css';
+import './letters__control-checkbox.css';
 
 export class Letters extends Component {
   constructor(props) {
@@ -65,7 +67,7 @@ export class Letters extends Component {
           checkAll={this.checkAll}
           isAllSelected={this.isAllSelected(this.props.letters)}
         />
-        <input className="letters__control-checkbox" id="open-task-1" type="checkbox"/>
+        <input className="letters__control-checkbox" id="open-task-1" type="checkbox" />
         <div className="letters__inbox">
           {this.props.letters.map(x => (
             <Letter
@@ -81,7 +83,7 @@ export class Letters extends Component {
           ))}
         </div>
         <Essay />
-        <LettersFooter/>
+        <LettersFooter />
       </div>
     );
   }

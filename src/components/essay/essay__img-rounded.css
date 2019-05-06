@@ -1,5 +1,5 @@
 .essay__img-rounded {
-    shape-outside: circle(50%);
-    width: 150px;
-    float: left;
+  width: 150px;
+  float: left;
+  shape-outside: circle(50%);
 }

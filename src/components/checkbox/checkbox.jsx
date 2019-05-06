@@ -1,6 +1,7 @@
 import React from 'react';
-import '../common.blocks/checkbox__input.css';
-import '../common.blocks/checkbox.css';
+
+import './checkbox__input.css';
+import './checkbox.css';
 
 export const Checkbox = ({ checked, check, id }) => {
   return (
