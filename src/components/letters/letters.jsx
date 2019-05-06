@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Letter } from './letter';
+import { Letter } from '../components/letter/letter';
 import { LettersPanel } from './letters-panel';
 import { LettersFooter } from './letters-footer';
 import '../common.blocks/letters.css';
 import '../common.blocks/letters__control-checkbox.css';
-import { Essay } from './essay';
+import { Essay } from '../components/essay/essay';
 
 export class Letters extends Component {
   constructor(props) {

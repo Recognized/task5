@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from './checkbox';
+import { Checkbox } from '../components/checkbox/checkbox';
 import '../common.blocks/letter.css';
 import '../common.blocks/letter__date.css';
 import '../common.blocks/letter__preview.css';
@@ -12,7 +12,7 @@ import '../common.blocks/letter_added.css';
 import '../common.blocks/letter_deleted.css';
 import '../common.blocks/gray-text.css';
 import '../common.blocks/single-line.css';
-import '../common.blocks/essay-close__control-label.css';
+import '../components/essay/essay-close__control-label.css';
 import '../common.blocks/mail-link.css';
 import '../common.blocks/clickable.css';
 

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import debounce from 'debounce';
+
 import { SearchBar } from './search-bar';
 import { Sidebar } from './sidebar';
 import { Letters } from './letters';
+
 import '../common.blocks/mail__layout-letters.css';
 import '../common.blocks/mail__layout-search.css';
 import '../common.blocks/mail__layout-sidebar.css';
@@ -54,23 +57,6 @@ export class App extends Component {
       maxId: 20
     };
 
-    function debounce(func, wait, immediate) {
-      let timeout;
-      return function() {
-        const context = this;
-
-        const args = arguments;
-        const later = function() {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
-        };
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-      };
-    }
-
     const addNewLetterDebounced = debounce(this.addLetter, 5 * 60 * 1000);
 
     function addNewLetterRepeated() {
@@ -82,7 +68,7 @@ export class App extends Component {
   }
 
   updateLetter = f => {
-    this.setState((prevState, prevProps) => {
+    this.setState(prevState => {
       return {
         letters: f(prevState.letters)
       };
@@ -105,7 +91,7 @@ export class App extends Component {
       unread: Math.random() < 0.5,
       added: true
     };
-    this.setState((prevState, x) => {
+    this.setState(prevState => {
       return {
         maxId: prevState.maxId + 1
       };

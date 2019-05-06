@@ -1,16 +1,16 @@
 import React from 'react';
-import '../common.blocks/letters__footer.css';
-import '../common.blocks/letters__footer-item.css';
-import '../common.blocks/letters__footer-link.css';
+import '../components/letters/letters__footer.css';
+import '../components/letters/letters__footer-item.css';
+import '../components/letters/letters__footer-link.css';
 import '../common.blocks/gray-text.css';
 import '../common.blocks/single-line.css';
 
 export const LettersFooter = () => {
   return (
     <footer className="letters__footer gray-text">
-      <LettersFooterItem name="© 2001-2018, Яндекс"/>
-      <LettersFooterItem name="Реклама"/>
-      <LettersFooterItem name="Помощь и обратная связь"/>
+      <LettersFooterItem name="© 2001-2018, Яндекс" />
+      <LettersFooterItem name="Реклама" />
+      <LettersFooterItem name="Помощь и обратная связь" />
     </footer>
   );
 };
