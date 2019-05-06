@@ -12,24 +12,25 @@ import './mail__layout-search.css';
 import './mail__layout-sidebar.css';
 
 export class App extends Component {
+  mounted = false;
+
   constructor(props) {
     super(props);
 
     this.state = {
       letters: initialLetters,
+      mounted: false,
       maxId: 20
     };
   }
 
   componentDidMount() {
-    const addNewLetterDebounced = debounce(this.addLetter, 5 * 60 * 1000);
+    this.mounted = true;
+    this.addNewLetterRepeated();
+  }
 
-    function addNewLetterRepeated() {
-      addNewLetterDebounced();
-      setTimeout(addNewLetterRepeated, new Date().getMilliseconds() % (60 * 1000));
-    }
-
-    addNewLetterRepeated();
+  componentWillUnmount() {
+    this.mounted = false;
   }
 
   updateLetter = f => {
@@ -41,6 +42,9 @@ export class App extends Component {
   };
 
   addLetter = () => {
+    if (!this.mounted) {
+      return;
+    }
     const newLetter = generateLetter(this.state.maxId + 1);
     this.setState(prevState => {
       return {
@@ -48,6 +52,17 @@ export class App extends Component {
       };
     });
     this.updateLetter(old => [newLetter, ...old]);
+  };
+
+  addNewLetterDebounced = debounce(this.addLetter, 5 * 60 * 1000);
+
+  addNewLetterRepeated = () => {
+    this.addNewLetterDebounced();
+    if (this.mounted) {
+      const timeout = Math.random() * (10 * 60 * 1000) + 10;
+      console.log(`Timeout: ${timeout}ms`);
+      setTimeout(this.addNewLetterRepeated, timeout);
+    }
   };
 
   render() {
